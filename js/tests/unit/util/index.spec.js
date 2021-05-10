@@ -161,7 +161,7 @@ describe('Util', () => {
 
       const el = fixtureEl.querySelector('div')
 
-      el.addEventListener('transitionend', () => {
+      el.addEventListener(TRANSITION_END, () => {
         expect().nothing()
         done()
       })

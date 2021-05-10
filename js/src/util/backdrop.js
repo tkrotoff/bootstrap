@@ -125,7 +125,7 @@ class Backdrop {
     }
 
     const backdropTransitionDuration = getTransitionDurationFromElement(this._getElement())
-    EventHandler.one(this._getElement(), 'transitionend', () => execute(callback))
+    EventHandler.one(this._getElement(), TRANSITION_END, () => execute(callback))
     emulateTransitionEnd(this._getElement(), backdropTransitionDuration)
   }
 }

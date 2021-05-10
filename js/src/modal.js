@@ -178,8 +178,7 @@ class Modal extends BaseComponent {
 
     if (isAnimated) {
       const transitionDuration = getTransitionDurationFromElement(this._element)
-
-      EventHandler.one(this._element, 'transitionend', event => this._hideModal(event))
+      EventHandler.one(this._element, TRANSITION_END, this._hideModal)
       emulateTransitionEnd(this._element, transitionDuration)
     } else {
       this._hideModal()
@@ -274,7 +273,7 @@ class Modal extends BaseComponent {
     if (isAnimated) {
       const transitionDuration = getTransitionDurationFromElement(this._dialog)
 
-      EventHandler.one(this._dialog, 'transitionend', transitionComplete)
+      EventHandler.one(this._dialog, TRANSITION_END, transitionComplete)
       emulateTransitionEnd(this._dialog, transitionDuration)
     } else {
       transitionComplete()
@@ -368,11 +367,11 @@ class Modal extends BaseComponent {
 
     this._element.classList.add(CLASS_NAME_STATIC)
     const modalTransitionDuration = getTransitionDurationFromElement(this._dialog)
-    EventHandler.off(this._element, 'transitionend')
-    EventHandler.one(this._element, 'transitionend', () => {
+    EventHandler.off(this._element, TRANSITION_END)
+    EventHandler.one(this._element, TRANSITION_END, () => {
       this._element.classList.remove(CLASS_NAME_STATIC)
       if (!isModalOverflowing) {
-        EventHandler.one(this._element, 'transitionend', () => {
+        EventHandler.one(this._element, TRANSITION_END, () => {
           this._element.style.overflowY = ''
         })
         emulateTransitionEnd(this._element, modalTransitionDuration)

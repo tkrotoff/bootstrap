@@ -82,7 +82,7 @@ class Alert extends BaseComponent {
 
     const transitionDuration = getTransitionDurationFromElement(element)
 
-    EventHandler.one(element, 'transitionend', () => this._destroyElement(element))
+    EventHandler.one(element, TRANSITION_END, () => this._destroyElement(element))
     emulateTransitionEnd(element, transitionDuration)
   }
 

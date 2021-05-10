@@ -87,7 +87,7 @@ describe('Alert', () => {
       const alertEl = document.querySelector('.alert')
       const alert = new Alert(alertEl)
 
-      alertEl.addEventListener('transitionend', () => {
+      alertEl.addEventListener(TRANSITION_END, () => {
         expect().nothing()
       })
 

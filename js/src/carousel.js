@@ -464,7 +464,7 @@ class Carousel extends BaseComponent {
 
       const transitionDuration = getTransitionDurationFromElement(activeElement)
 
-      EventHandler.one(activeElement, 'transitionend', () => {
+      EventHandler.one(activeElement, TRANSITION_END, () => {
         nextElement.classList.remove(directionalClassName, orderClassName)
         nextElement.classList.add(CLASS_NAME_ACTIVE)
 

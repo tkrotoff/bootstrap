@@ -128,7 +128,7 @@ class Tab extends BaseComponent {
       const transitionDuration = getTransitionDurationFromElement(active)
       active.classList.remove(CLASS_NAME_SHOW)
 
-      EventHandler.one(active, 'transitionend', complete)
+      EventHandler.one(active, TRANSITION_END, complete)
       emulateTransitionEnd(active, transitionDuration)
     } else {
       complete()

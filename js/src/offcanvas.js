@@ -125,7 +125,7 @@ class Offcanvas extends BaseComponent {
     }
 
     const transitionDuration = getTransitionDurationFromElement(this._element)
-    EventHandler.one(this._element, 'transitionend', completeCallBack)
+    EventHandler.one(this._element, TRANSITION_END, completeCallBack)
     emulateTransitionEnd(this._element, transitionDuration)
   }
 
@@ -160,7 +160,7 @@ class Offcanvas extends BaseComponent {
     }
 
     const transitionDuration = getTransitionDurationFromElement(this._element)
-    EventHandler.one(this._element, 'transitionend', completeCallback)
+    EventHandler.one(this._element, TRANSITION_END, completeCallback)
     emulateTransitionEnd(this._element, transitionDuration)
   }
 

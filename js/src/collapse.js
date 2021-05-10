@@ -202,7 +202,7 @@ class Collapse extends BaseComponent {
     const scrollSize = `scroll${capitalizedDimension}`
     const transitionDuration = getTransitionDurationFromElement(this._element)
 
-    EventHandler.one(this._element, 'transitionend', complete)
+    EventHandler.one(this._element, TRANSITION_END, complete)
 
     emulateTransitionEnd(this._element, transitionDuration)
     this._element.style[dimension] = `${this._element[scrollSize]}px`
@@ -252,7 +252,7 @@ class Collapse extends BaseComponent {
     this._element.style[dimension] = ''
     const transitionDuration = getTransitionDurationFromElement(this._element)
 
-    EventHandler.one(this._element, 'transitionend', complete)
+    EventHandler.one(this._element, TRANSITION_END, complete)
     emulateTransitionEnd(this._element, transitionDuration)
   }
 
