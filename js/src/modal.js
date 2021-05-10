@@ -282,10 +282,8 @@ class Modal extends BaseComponent {
 
   _enforceFocus() {
     EventHandler.off(document, EVENT_FOCUSIN) // guard against infinite focus loop
-    EventHandler.on(document, EVENT_FOCUSIN, event => {
-      if (document !== event.target &&
-          this._element !== event.target &&
-          !this._element.contains(event.target)) {
+    EventHandler.on(document, EVENT_FOCUSIN, ({target}) => {
+      if (document !== target && this._element !== target && !this._element.contains(target)) {
         this._element.focus()
       }
     })
