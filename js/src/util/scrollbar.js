@@ -61,7 +61,7 @@ const _resetElementAttributes = (selector, styleProp) => {
   SelectorEngine.find(selector).forEach(element => {
     const value = Manipulator.getDataAttribute(element, styleProp)
     if (typeof value === 'undefined') {
-      element.style.removeProperty(styleProp)
+      element.style.removeProperty(styleProp) // FIXME This cannot work: element.style.removeProperty('paddingRight') should be element.style.removeProperty('padding-right')
     } else {
       Manipulator.removeDataAttribute(element, styleProp)
       element.style[styleProp] = value
