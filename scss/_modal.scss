@@ -116,7 +116,7 @@
   justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
   padding: $modal-header-padding;
   border-bottom: $modal-header-border-width solid $modal-header-border-color;
-  @include border-top-radius($modal-content-inner-border-radius);
+  // @include border-top-radius($modal-content-inner-border-radius); // Not needed?
 
   .btn-close {
     padding: ($modal-header-padding-y / 2) ($modal-header-padding-x / 2);
